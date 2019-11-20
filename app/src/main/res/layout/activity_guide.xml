@@ -27,6 +27,12 @@
             android:layout_height="40dp"
             android:id="@+id/iv2"
             android:src="@drawable/point"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/iv3"
+            android:src="@drawable/point"
+            />
     </LinearLayout>
 
 </RelativeLayout>

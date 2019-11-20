@@ -16,7 +16,14 @@ import java.util.List;
 
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     private Context mContext;
-    private List<Card> mCardList;
+    private static List<Card> mCardList;
+    //声明自定义的监听接口
+    private static OnRecyclerItemClickListener monItemClickListener;
+
+    //提供set方法供Activity或Fragment调用
+    public void setRecyclerItemClickListener(OnRecyclerItemClickListener listener){
+        monItemClickListener=listener;}
+
     static class ViewHolder extends RecyclerView.ViewHolder{
         CardView cardView;
         ImageView imageView;
@@ -26,6 +33,14 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
             cardView = (CardView) view;
             imageView = (ImageView)view.findViewById(R.id.card_image);
             textView = (TextView)view.findViewById(R.id.card_name);
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (monItemClickListener!=null){
+                        monItemClickListener.onItemClick(getAdapterPosition(),mCardList);
+                    }
+                }
+            });
         }
     }
     public CardAdapter(List<Card> cardList){
@@ -50,4 +65,9 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         return mCardList.size();
     }
 
+    public interface OnRecyclerItemClickListener {
+        //RecyclerView的点击事件，将信息回调给view
+        void onItemClick(int Position, List<Card> cardList);
+    }
 }
+

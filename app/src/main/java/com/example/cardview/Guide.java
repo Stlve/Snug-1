@@ -80,6 +80,7 @@ public class Guide extends AppCompatActivity  implements ViewPager.OnPageChangeL
         LayoutInflater inflater = LayoutInflater.from(this);
         views = new ArrayList<View>();
         views.add(inflater.inflate(R.layout.onepage, null));  // 加载视图1
+      // views.add(inflater.inflate(R.layout.threepage, null));  // 加载视图3
         views.add(inflater.inflate(R.layout.twopage, null));  // 加载视图2
 
         vpAdapter = new GuideAdapter(views, this);   // 创建我们的 adapter

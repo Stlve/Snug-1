@@ -7,7 +7,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:layout_alignParentTop="true"
-        android:background="@drawable/zhan2"/>
+        android:background="@drawable/welcome"/>
     <!-- 添加进去按钮 -->
     <LinearLayout
         android:layout_width="match_parent"
