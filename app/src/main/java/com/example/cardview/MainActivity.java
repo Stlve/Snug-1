@@ -3,24 +3,24 @@ package com.example.cardview;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-
-import pl.droidsonroids.gif.GifImageView;
 
 public class MainActivity extends AppCompatActivity {
 private DrawerLayout mdrawerLayout;
-    private Card[] cards = {new Card("apple",R.drawable.apple),new Card("cherry",R.drawable.cherry),new Card("bananan",R.drawable.cherry),new Card("dian",R.drawable.bo)};
+    private Card[] cards = {new Card("和我说话",R.drawable.talkwithmeldpi),new Card("当前旅程",R.drawable.tripldpi),new Card("选择旅程",R.drawable.alltripldpi),new Card("成长回顾",R.drawable.conclusionldpi)};
     private List<Card> cardList = new ArrayList<>();
     private CardAdapter adapter;
+    private ImageView head_photo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,10 +54,17 @@ private DrawerLayout mdrawerLayout;
                 if (Position==3){
 
                 }
-
-
             }
         });
+        head_photo = (ImageView)findViewById(R.id.head_photo);
+        head_photo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent i = new Intent(MainActivity.this, Addevent.class);  // 进去MainActivity
+//                startActivity(i);
+            }
+        });
+
 }
     private void initCards(){
         cardList.clear();

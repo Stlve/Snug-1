@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="frequently">
+        <item>一天1次</item>
+        <item>一天2次</item>
+        <item>一天3次</item>
+        <item>一天4次</item>
+    </string-array>
+</resources>

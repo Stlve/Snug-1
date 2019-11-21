@@ -36,12 +36,12 @@ public class SplashActivity extends AppCompatActivity {
                 ToolKits.putBoolean(SplashActivity.this,IS_FIRST,true);
                 return true;
             }
-        }).sendEmptyMessageDelayed(0,3000);/*延迟3s*/
+        }).sendEmptyMessageDelayed(0,2000);/*延迟1s*/
         Thread myThread=new Thread(){//创建子线程
             @Override
             public void run() {
                 try{
-                    sleep(3000);//使程序休眠五秒
+                    sleep(2000);//使程序休眠五秒
                     Intent it=new Intent(getApplicationContext(),SplashActivity.class);//启动MainActivity
                     startActivity(it);
                     finish();//关闭当前活动

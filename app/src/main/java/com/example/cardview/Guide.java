@@ -26,7 +26,7 @@ public class Guide extends AppCompatActivity  implements ViewPager.OnPageChangeL
     private List<View> views;
     // 导航点
     private ImageView[] dots;
-    private int[] ids = {R.id.iv1, R.id.iv2};
+    private int[] ids = {R.id.iv1, R.id.iv2,R.id.iv3};
 
     // 开始按钮
     private Button bt;
@@ -80,15 +80,15 @@ public class Guide extends AppCompatActivity  implements ViewPager.OnPageChangeL
         LayoutInflater inflater = LayoutInflater.from(this);
         views = new ArrayList<View>();
         views.add(inflater.inflate(R.layout.onepage, null));  // 加载视图1
-      // views.add(inflater.inflate(R.layout.threepage, null));  // 加载视图3
         views.add(inflater.inflate(R.layout.twopage, null));  // 加载视图2
+        views.add(inflater.inflate(R.layout.threepage, null));  // 加载视图3
 
         vpAdapter = new GuideAdapter(views, this);   // 创建我们的 adapter
         vp = (ViewPager) findViewById(R.id.view_pager);
         vp.setAdapter(vpAdapter);                        // viewpage绑定 adapter
         vp.setOnPageChangeListener(this);                // ViewPager 监听自己
         // 进入按钮
-        this.bt = (Button) views.get(1).findViewById(R.id.btn_start);
+        this.bt = (Button) views.get(2).findViewById(R.id.btn_start);
         this.bt.setOnClickListener(new View.OnClickListener() {  // 监听
             @Override
             public void onClick(View v) {

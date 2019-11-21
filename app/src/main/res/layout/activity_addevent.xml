@@ -37,31 +37,44 @@
             android:text="是否需要自我评级"/>
 
     </LinearLayout>
-    <LinearLayout
+    <RelativeLayout
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
-            android:id="@+id/tvShowDialog"
+            android:id="@+id/see_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="时间"
             android:textSize="20sp"/>
-    </LinearLayout>
-    <LinearLayout
+
+        <TextView
+            android:id="@+id/tvShowDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text=" X 年 X 月 X 日 X 时 X 分"
+            android:textSize="20sp" />
+    </RelativeLayout>
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginTop="5dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="重复频率"
             android:textSize="20sp"/>
-    </LinearLayout>
+        <Spinner
+            android:id="@+id/spin_one"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
     <FrameLayout
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal">
         <Button
@@ -69,15 +82,11 @@
             android:id="@+id/addclose"
             android:textSize="20sp"
             android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edit_background"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-<!--        <Button-->
-<!--            android:id="@+id/addcancel"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="取消"-->
-<!--            android:textSize="20sp" />-->
     </FrameLayout>
 
 </LinearLayout>
